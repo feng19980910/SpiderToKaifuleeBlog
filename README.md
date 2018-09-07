@@ -1,5 +1,6 @@
 # SpiderToBlogKaifulee
 Use scrapy to crawl the articals from Kaifulee's Sina blog
+Need scrapy frame work
 
 
 ## debug note
