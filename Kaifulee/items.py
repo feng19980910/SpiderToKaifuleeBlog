@@ -16,4 +16,9 @@ class KaifuleeItem(scrapy.Item):
     date = scrapy.Field()
     url = scrapy.Field()
     content = scrapy.Field()
+    favorites = scrapy.Field()
+    reads = scrapy.Field()
+    comments = scrapy.Field()
+    transfers = scrapy.Field()
+    likes = scrapy.Field()
     pass

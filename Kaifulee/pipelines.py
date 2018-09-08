@@ -11,7 +11,7 @@ import os
 class KaifuleePipeline(object):
     def __init__(self):
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!init!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        self.file = codecs.open("d:/Users/feng/Desktop/KaifuleeBlog.json", "w", encoding='utf-8')
+        self.file = codecs.open("/tmp/KaifuleeBlog.json", "w", encoding='utf-8')
 
 ############# MAYBE ITEMLOADER
     def process_item(self, item, spider):
