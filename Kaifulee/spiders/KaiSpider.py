@@ -20,7 +20,6 @@ class KaispiderSpider(scrapy.Spider):
         next_url = response.css(".SG_pgnext a::attr(href)").extract()
         if next_url != []:
             yield Request(url=parse.urljoin(response.url, next_url[0]), callback=self.parse)
-            print("next page : " + next_url[0])
 
     def parse_detail(self,response):
 
@@ -49,15 +48,13 @@ class KaispiderSpider(scrapy.Spider):
         maintype = 'num'
         uid = originReque[:8]
         aids = originReque[-6:]
-        requestId = 'artices_numer_132' #########
+        requestId = 'artices_numer_132'
         requestAPI = modole_request.format(maintype=maintype, uid=uid, aids=aids, requestId=requestId)
         thisRequest = urllib.request.Request(requestAPI)
         originJson = urllib.request.urlopen(thisRequest)
         originJson = originJson.read().decode('utf-8')
         jsonBegin = originJson.find('{')
         jsonEnd = originUrl.rfind('}')
-        print("*****************" )
-        print(jsonEnd)
         jsonContent = originJson[jsonBegin : jsonEnd - 1]
         jsonDict = json.loads(jsonContent)
         
